@@ -1,0 +1,27 @@
+.timer {
+    font-size: 500%;
+}
+
+.timer-button {
+    
+    height: 40px;
+    width: 150px;
+    background-color: white;
+    font-size: 100%;
+    border-radius: 10%;
+    transition-duration: 0.4s;
+    text-align: center;
+    text-justify: auto;
+    color: black;
+    margin: 5%;
+}
+
+.timer-button:hover {
+    background-color: #bfbfbf;
+}
+
+.button-container {
+    height: auto;
+    width: auto;
+}
+
