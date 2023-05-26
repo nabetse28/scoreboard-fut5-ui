@@ -1,29 +1,56 @@
-import React, { useState } from 'react';
+import React from "react";
+import "./score.css";
+export default class Score extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      teamName: this.props.teamName,
+      counter: 0,
+    };
+  }
 
-const Score = (Name) => {
-  const [teamName, setTeamName] = useState(Name);
-  const [counter, setCounter] = useState(0);
-
-  const increase = () => {
-    setCounter(counter + 1);
+  increase = () => {
+    this.setState({ counter: this.state.counter + 1 });
   };
-  const decrease = () => {
-    if (counter >= 1) {
-      setCounter(counter - 1);
+
+  decrease = () => {
+    if (this.state.counter >= 1) {
+      this.setState({ counter: this.state.counter - 1 });
     }
   };
-  const reset = () => {
-    setCounter(0);
+
+  reset = () => {
+    this.setState({ counter: 0 });
   };
 
-  return (
-    <div>
-      <h1>{teamName}</h1>
-      <span>{counter}</span>
-      <div>
-        <button onClick={increase}>+</button>
-        <button onClick={decrease}>-</button>
+  render() {
+    return (
+      <div
+        style={{
+          display: "inline-block",
+          margin: "18%",
+          marginTop: "-1%",
+          marginBottom: "-40%",
+          height: "100px",
+        }}
+      >
+        <div style={{}}>
+          <h1 style={{ color: "white", fontSize: "70px" }}>
+            {this.state.teamName}
+          </h1>
+          <span style={{ color: "white", fontSize: "120px" }}>
+            {this.state.counter}
+          </span>
+        </div>
+        <div style={{ marginBottom: "-50%" }}>
+          <button onClick={this.increase} className="control-button">
+            +
+          </button>
+          <button onClick={this.decrease} className="control-button">
+            -
+          </button>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}

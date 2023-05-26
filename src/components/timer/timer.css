@@ -1,19 +1,19 @@
 .timer {
-    font-size: 500%;
+    font-size: calc(15px + 2vmin);
+    color: white;
 }
 
 .timer-button {
-    
     height: 40px;
     width: 150px;
     background-color: white;
-    font-size: 100%;
+    font-size: calc(10px + 2vmin);
     border-radius: 10%;
     transition-duration: 0.4s;
     text-align: center;
     text-justify: auto;
     color: black;
-    margin: 5%;
+    margin: 1%;
 }
 
 .timer-button:hover {
@@ -23,5 +23,6 @@
 .button-container {
     height: auto;
     width: auto;
+    flex-direction: row;
 }
 

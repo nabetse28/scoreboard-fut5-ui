@@ -5,13 +5,13 @@ const Timer = () => {
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [hours, setHours] = useState(1);
-  const [pause, setPause] = useState(false);
+  const [pause, setPause] = useState(true);
 
   const restart = () => {
     setSeconds(0);
     setMinutes(0);
     setHours(1);
-    setPause(false);
+    setPause(true);
   };
 
   const stop = () => {
@@ -46,9 +46,8 @@ const Timer = () => {
   });
 
   return (
-    <div>
-      <h1>Match Game</h1>
-      <h1 className='timer'>
+    <div className='timer'>
+      <h1 >
         {hours < 10 ? '0' + hours : hours}:
         {minutes < 10 ? '0' + minutes : minutes}:
         {seconds < 10 ? '0' + seconds : seconds}
